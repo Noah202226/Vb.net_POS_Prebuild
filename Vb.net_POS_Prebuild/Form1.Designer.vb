@@ -37,7 +37,7 @@ Partial Class Form1
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Font = New Font("Yu Gothic UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(109, 78)
+        Label1.Location = New Point(418, 214)
         Label1.Name = "Label1"
         Label1.Size = New Size(637, 86)
         Label1.TabIndex = 0
@@ -46,17 +46,26 @@ Partial Class Form1
         ' Button1
         ' 
         Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button1.Location = New Point(761, 12)
+        Button1.BackColor = Color.OrangeRed
+        Button1.Cursor = Cursors.Hand
+        Button1.FlatAppearance.BorderColor = Color.Maroon
+        Button1.FlatAppearance.BorderSize = 2
+        Button1.FlatAppearance.MouseDownBackColor = Color.Firebrick
+        Button1.FlatAppearance.MouseOverBackColor = Color.Red
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Font = New Font("Yu Gothic UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = SystemColors.Control
+        Button1.Location = New Point(1304, 12)
         Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
+        Button1.Size = New Size(50, 28)
         Button1.TabIndex = 1
-        Button1.Text = "Exit"
-        Button1.UseVisualStyleBackColor = True
+        Button1.Text = "EXIT"
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
         Button2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        Button2.Location = New Point(718, 451)
+        Button2.Location = New Point(1236, 704)
         Button2.Name = "Button2"
         Button2.Size = New Size(118, 23)
         Button2.TabIndex = 2
@@ -66,7 +75,7 @@ Partial Class Form1
         ' BtnChangeLogo
         ' 
         BtnChangeLogo.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        BtnChangeLogo.Location = New Point(718, 480)
+        BtnChangeLogo.Location = New Point(1236, 733)
         BtnChangeLogo.Name = "BtnChangeLogo"
         BtnChangeLogo.Size = New Size(118, 23)
         BtnChangeLogo.TabIndex = 3
@@ -76,7 +85,7 @@ Partial Class Form1
         ' txtUser
         ' 
         txtUser.Font = New Font("Yu Gothic UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtUser.Location = New Point(120, 201)
+        txtUser.Location = New Point(429, 337)
         txtUser.Name = "txtUser"
         txtUser.PlaceholderText = "Username"
         txtUser.Size = New Size(590, 35)
@@ -85,8 +94,9 @@ Partial Class Form1
         ' txtPass
         ' 
         txtPass.Font = New Font("Yu Gothic UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtPass.Location = New Point(120, 259)
+        txtPass.Location = New Point(429, 395)
         txtPass.Name = "txtPass"
+        txtPass.PasswordChar = "*"c
         txtPass.PlaceholderText = "Password"
         txtPass.Size = New Size(590, 35)
         txtPass.TabIndex = 5
@@ -94,28 +104,36 @@ Partial Class Form1
         ' btnLogin
         ' 
         btnLogin.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnLogin.Location = New Point(622, 323)
+        btnLogin.BackColor = Color.Lime
+        btnLogin.FlatAppearance.MouseDownBackColor = Color.Cyan
+        btnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(192), CByte(255), CByte(255))
+        btnLogin.FlatStyle = FlatStyle.Flat
+        btnLogin.Font = New Font("Yu Gothic UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnLogin.ForeColor = Color.Maroon
+        btnLogin.Location = New Point(931, 464)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(88, 37)
         btnLogin.TabIndex = 6
-        btnLogin.Text = "LOGIN"
-        btnLogin.UseVisualStyleBackColor = True
+        btnLogin.Text = "Login ->"
+        btnLogin.UseVisualStyleBackColor = False
+        btnLogin.Visible = False
         ' 
         ' Button3
         ' 
         Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button3.Location = New Point(599, 451)
+        Button3.Location = New Point(1117, 704)
         Button3.Name = "Button3"
         Button3.Size = New Size(111, 52)
         Button3.TabIndex = 7
-        Button3.Text = "LOGIN"
+        Button3.Text = "Check Connection"
         Button3.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(848, 515)
+        BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(128))
+        ClientSize = New Size(1366, 768)
         Controls.Add(Button3)
         Controls.Add(btnLogin)
         Controls.Add(txtPass)

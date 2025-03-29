@@ -156,4 +156,12 @@ Public Class Form1
         End Try
 
     End Sub
+
+    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPass.TextChanged
+        If txtPass.Text.Length > 0 And txtPass.Text IsNot "" Then
+            btnLogin.Visible = True
+        Else
+            btnLogin.Visible = False
+        End If
+    End Sub
 End Class

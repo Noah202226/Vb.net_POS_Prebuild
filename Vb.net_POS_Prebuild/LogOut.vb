@@ -25,7 +25,7 @@ Public Class LogOut
         UpdateState()
         Try
 
-            Application.ExitThread()
+            Environment.Exit(0)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
