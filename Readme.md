@@ -15,6 +15,7 @@ This is a VB.NET application designed to [briefly describe the purpose of your p
 - .NET Framework [9]
 - Visual Studio [2022]
 - SQL Server
+- SQL Server Management Studio (SSMS)
 
 ## SQL Data
 
