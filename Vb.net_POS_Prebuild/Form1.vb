@@ -5,7 +5,7 @@ Public Class Form1
 
 
     Private Function GetLoggedUser(sessionID As String) As String
-        Dim query As String = "SELECT session_logged FROM Session WHERE sessionID = 1 AND session_state = 'open'"
+        Dim query As String = "SELECT session_user FROM Session WHERE sessionID = 1 AND session_state = 'open'"
         Dim loggedUser As String = ""
 
         Try
@@ -29,11 +29,11 @@ Public Class Form1
         ' If a user is logged in, show MainForm; otherwise, show LoginForm
         If loggedUser <> "" Then
             Main.ShowDialog()
-            MsgBox("✅ Logged in as: " & loggedUser)
+            'MsgBox("✅ Logged in as: " & loggedUser)
         Else
             Me.WindowState = FormWindowState.Maximized
 
-            MsgBox("❌ No active session found!")
+            ' MsgBox("❌ No active session found!")
 
         End If
 
@@ -47,7 +47,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetLoggedUser(1)
         txtUser.Focus()
-
+        lblDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt")
+        tmrDateTime.Start()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -163,5 +164,9 @@ Public Class Form1
         Else
             btnLogin.Visible = False
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tmrDateTime.Tick
+        lblDateTime.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt")
     End Sub
 End Class

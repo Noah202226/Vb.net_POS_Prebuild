@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Label1 = New Label()
         Button1 = New Button()
         Button2 = New Button()
@@ -30,6 +31,8 @@ Partial Class Form1
         txtPass = New TextBox()
         btnLogin = New Button()
         Button3 = New Button()
+        lblDateTime = New Label()
+        tmrDateTime = New Timer(components)
         SuspendLayout()
         ' 
         ' Label1
@@ -37,11 +40,11 @@ Partial Class Form1
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Font = New Font("Yu Gothic UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(418, 214)
+        Label1.Location = New Point(308, 214)
         Label1.Name = "Label1"
-        Label1.Size = New Size(637, 86)
+        Label1.Size = New Size(786, 86)
         Label1.TabIndex = 0
-        Label1.Text = "YOUR POS PARTNER"
+        Label1.Text = "YOUR STORE NAME HERE"
         ' 
         ' Button1
         ' 
@@ -128,12 +131,26 @@ Partial Class Form1
         Button3.Text = "Check Connection"
         Button3.UseVisualStyleBackColor = True
         ' 
+        ' lblDateTime
+        ' 
+        lblDateTime.AutoSize = True
+        lblDateTime.Font = New Font("Yu Gothic UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDateTime.Location = New Point(12, 15)
+        lblDateTime.Name = "lblDateTime"
+        lblDateTime.Size = New Size(0, 25)
+        lblDateTime.TabIndex = 8
+        ' 
+        ' tmrDateTime
+        ' 
+        tmrDateTime.Interval = 1000
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(128))
         ClientSize = New Size(1366, 768)
+        Controls.Add(lblDateTime)
         Controls.Add(Button3)
         Controls.Add(btnLogin)
         Controls.Add(txtPass)
@@ -158,5 +175,7 @@ Partial Class Form1
     Friend WithEvents txtPass As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents lblDateTime As Label
+    Friend WithEvents tmrDateTime As Timer
 
 End Class

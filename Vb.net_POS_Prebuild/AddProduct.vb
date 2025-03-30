@@ -14,11 +14,17 @@ Public Class AddProduct
         Using conn As New SqlConnection(connectionString)
             conn.Open()
             Dim query As String = "SELECT * FROM Products"
-            Using cmd As New SqlCommand(query, conn)
-                Using reader As SqlDataReader = cmd.ExecuteReader()
-                    dt.Load(reader)
+
+            Try
+                Using cmd As New SqlCommand(query, conn)
+                    Using reader As SqlDataReader = cmd.ExecuteReader()
+                        dt.Load(reader)
+                    End Using
                 End Using
-            End Using
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
         End Using
         Return dt
     End Function

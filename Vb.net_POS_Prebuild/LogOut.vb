@@ -3,11 +3,14 @@ Public Class LogOut
 
     Private Sub UpdateState()
         'Update session state
-        Dim query As String = "UPDATE Session SET session_state = 'closed', session_logged = '' WHERE sessionID = 1"
+        Dim query As String = "UPDATE Session SET session_state = @sessionState, session_logged = @sessionUser WHERE sessionID = @sessionID"
 
         Try
             Using conn As New SqlConnection(connectionString)
                 Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@sessionState", "closed")
+                    cmd.Parameters.AddWithValue("@sessionUser", "")
+                    cmd.Parameters.AddWithValue("@sessionID", 1)
 
                     conn.Open()
                     cmd.ExecuteNonQuery()
