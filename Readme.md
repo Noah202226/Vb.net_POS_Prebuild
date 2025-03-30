@@ -16,6 +16,7 @@ This is a VB.NET application designed to [briefly describe the purpose of your p
 - Visual Studio [2022]
 - SQL Server
 - SQL Server Management Studio (SSMS)
+- Vozy Thermal Printer driver - P50 
 
 ## SQL Data
 
